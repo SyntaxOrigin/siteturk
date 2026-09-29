@@ -1,0 +1,97 @@
+:root {
+  --zemin: #f6f7f9;
+  --yazi: #1b1f24;
+  --vurgu: #1f5fd0;
+  --cizgi: #d8dee6;
+  --kod: #f1f3f7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  max-width: 46rem;
+  background: var(--zemin);
+  color: var(--yazi);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cizgi);
+}
+
+header .marka { font-weight: 700; font-size: 1.15rem; }
+
+nav a {
+  margin-left: 1rem;
+  color: var(--vurgu);
+  text-decoration: none;
+}
+
+nav a:hover { text-decoration: underline; }
+
+h1 { margin: 1.5rem 0 .25rem; line-height: 1.2; }
+h2 { margin: 2rem 0 .5rem; font-size: 1.2rem; }
+
+.meta { color: #57606d; font-size: .9rem; display: flex; gap: .75rem; }
+.meta .taslak { color: #9a6700; letter-spacing: .04em; }
+
+.ozet {
+  padding: .75rem .9rem;
+  background: var(--kod);
+  border-left: 3px solid var(--vurgu);
+  border-radius: 4px;
+}
+
+article a { color: var(--vurgu); }
+
+code {
+  padding: .1rem .3rem;
+  background: var(--kod);
+  border-radius: 3px;
+  font-size: .9em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: .9rem 1rem;
+  background: var(--kod);
+  border: 1px solid var(--cizgi);
+  border-radius: 6px;
+}
+
+pre code { padding: 0; background: none; }
+
+blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--cizgi);
+  color: #57606d;
+}
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { padding: .45rem .6rem; border-bottom: 1px solid var(--cizgi); text-align: left; }
+th { background: var(--kod); }
+
+hr { border: 0; border-top: 1px solid var(--cizgi); margin: 2rem 0; }
+
+.etiketler ul { list-style: none; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; }
+.etiketler li { padding: .15rem .55rem; background: var(--kod); border-radius: 999px; font-size: .85rem; }
+.etiketler a { color: inherit; text-decoration: none; }
+
+.alt {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cizgi);
+  color: #57606d;
+  font-size: .85rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

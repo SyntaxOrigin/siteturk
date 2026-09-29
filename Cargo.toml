@@ -1,0 +1,26 @@
+[package]
+name = "siteturk"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+license = "MIT"
+description = "Markdown klasorunu bagimsiz sekilde derleyen, dist klasorune yazan ve yerel canli yenileme sunucusuyla gosteren tek dosyalik statik site ureticisi."
+repository = "https://github.com/SyntaxOrigin/siteturk"
+readme = "README.md"
+keywords = ["cli", "static-site-generator", "markdown", "siteturk"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+# serde: siteturk.json yapilandirma semasi ve yeniden-uretim imza onbellegi (src/config.rs, src/oznur.rs).
+serde = { version = "1", features = ["derive"] }
+# serde_json: yapilandirma dosyasinin okunmasi ve onbellegin JSON olarak saklanmasi (src/config.rs, src/oznur.rs).
+serde_json = "1"
+# clap: new / build / serve / check alt komutlarinin ve bayraklarinin ayristirilmasi (src/main.rs).
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "debuginfo"

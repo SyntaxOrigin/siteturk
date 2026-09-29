@@ -1,0 +1,12 @@
+{
+  "kaynak": "icerik",
+  "cikti": "dist",
+  "sablon": "sablonlar/sayfa.html",
+  "varlik": "static",
+  "adres": "https://ornek.example",
+  "sitemap": true,
+  "robots": true,
+  "taslaklari_yayinla": false,
+  "imzali_varlik": true,
+  "kucult": true
+}

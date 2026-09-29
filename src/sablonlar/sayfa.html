@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{% if sayfa.baslik %}{{ sayfa.baslik }} — {{ site.adres }}{% else %}{{ site.adres }}{% endif %}</title>
+<link rel="stylesheet" href="{{ varlik("sayfa.css") }}" />
+</head>
+<body>
+<header>
+  <a class="marka" href="/">StatikUsta</a>
+  <nav>
+    {% for s in tumSayfalar %}<a href="{{ s.adres }}">{{ s.baslik }}</a>{% endfor %}
+  </nav>
+</header>
+
+<main>
+  <article>
+    <h1>{{ sayfa.baslik }}</h1>
+    <p class="meta">
+      {% if sayfa.yazar %}<span>{{ sayfa.yazar }}</span>{% endif %}
+      {% if sayfa.tarih %}<time>{{ sayfa.tarih }}</time>{% endif %}
+      {% if sayfa.taslak %}<strong class="taslak">TASLAK</strong>{% endif %}
+    </p>
+    {% if sayfa.ozet %}<p class="ozet">{{ sayfa.ozet }}</p>{% endif %}
+    {{ sayfa.govde | ham }}
+  </article>
+
+  {% if sayfa.etiketler %}
+  <footer class="etiketler">
+    <h2>Etiketler</h2>
+    <ul>
+      {% for e in sayfa.etiketler %}<li><a href="/etiket/{{ e }}/">{{ e }}</a></li>{% endfor %}
+    </ul>
+  </footer>
+  {% endif %}
+</main>
+
+<footer class="alt">
+  <p>{{ site.adres }} · {{ site.sayfaSayisi }} sayfa</p>
+  <p><a href="/sitemap.xml">sitemap.xml</a></p>
+</footer>
+</body>
+</html>

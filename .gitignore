@@ -1,0 +1,12 @@
+/target/
+.env
+*.log
+.idea/
+.vscode/
+*.swp
+*.tmp
+
+# Örnek sitenin üretim çıktısı ve yeniden üretim önbelleği: bunlar
+# `siteturk build` ile her an yeniden üretilebilir, depoda tutulmaz.
+/ornek/dist/
+/ornek/.siteturk-onbellek.json
